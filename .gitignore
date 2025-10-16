@@ -1,0 +1,33 @@
+# Factory CLI private data
+sessions/
+tasks/
+auth.json
+history.json
+settings.json
+logs/
+artifacts/
+
+# Sensitive configuration
+config.json
+mcp.json
+
+# Symlinks and local files
+AGENTS.md
+DROID.md
+
+# Implementation/phase documentation (keep only user-facing docs)
+docs/phase-2-complete.md
+docs/phase-3-complete.md
+docs/phase-4-verification-complete.md
+docs/symlinks-setup-complete.md
+docs/droids-fixed-summary.md
+
+# OS files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
