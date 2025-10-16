@@ -7,6 +7,9 @@ settings.json
 logs/
 artifacts/
 
+# Droids with security issues
+droids/deployment-specialist.md
+
 # Sensitive configuration
 config.json
 mcp.json
