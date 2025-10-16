@@ -1,0 +1,1 @@
+Scan whole codebase and tell me what indexes are missing.

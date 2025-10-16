@@ -70,7 +70,7 @@ You: "Build user authentication"
 2. **Start Factory CLI**
    ```bash
    cd /path/to/your/project
-   factory
+   droid
    ```
 
 3. **Select the Orchestrator**
