@@ -67,7 +67,7 @@ You: "Build user authentication"
    ls ~/.factory/droids/
    ```
 
-2. **Start Factory CLI**
+2. **Start Droid CLI**
    ```bash
    cd /path/to/your/project
    droid
@@ -245,7 +245,7 @@ your-project/
 
 > **📍 Important**: Project-specific droids (in `your-project/.factory/droids/`) **override** global droids with the same name!
 
-### Custom Droids
+### Custom Droids : https://docs.factory.ai/cli/configuration/custom-droids#custom-droids-subagents
 
 You can create custom droids for your project in **either** location:
 
@@ -276,6 +276,46 @@ When invoked, you:
 2. **Global** (`~/.factory/droids/`) - **Lower priority**
 
 The orchestrator will first check for droids in the project's `.factory/droids/` folder, then fall back to the global `~/.factory/droids/` folder.
+
+### Working Project Structure
+
+**Projects that droids work on should have the following structure:**
+
+#### Recommended Project Layout
+```
+your-project/                    # Your actual project
+├── .factory/                    # Factory-specific project files
+│   └── droids/                  # Project-specific droids (optional)
+│       ├── custom-droid.md      # Your custom droids
+│       ├── project-architect.md # Project-specific architect
+│       └── ...                  # Other project droids
+├── droids/                      # 📁 DROIDS FOLDER (Required)
+│   ├── orchestrator.md          # Orchestrator droid definition
+│   ├── frontend-developer.md    # Frontend specialist
+│   ├── backend-architect.md     # Backend architect
+│   ├── security-auditor.md      # Security specialist
+│   ├── test-automator.md        # Testing automation
+│   └── ...                      # All available agents
+├── orchestrator/                # 📁 ORCHESTRATOR FOLDER (Required)
+│   ├── context-manager.md       # Context management
+│   ├── task-patterns.json       # Task patterns
+│   ├── orchestrator-config.json # Configuration
+│   └── ...                      # Orchestrator modules
+├── src/                         # Your source code
+├── tests/                       # Your test files
+├── docs/                        # Your documentation
+└── package.json                 # Your project config
+```
+
+> **🚀 IMPORTANT**: For droids to work properly on your project, ensure your project root contains:
+> 1. **`droids/`** folder with all agent definitions
+> 2. **`orchestrator/`** folder with orchestration modules
+> 3. **Optional**: `.factory/droids/` for project-specific overrides
+
+This structure allows droids to:
+- Access specialized agents from the `droids/` folder
+- Use orchestration capabilities from the `orchestrator/` folder  
+- Override global droids with project-specific ones in `.factory/droids/`
 
 ## 📚 Documentation
 
